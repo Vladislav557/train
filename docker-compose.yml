@@ -1,0 +1,33 @@
+version: "3.9"
+
+networks:
+  172.10.0.0:
+    external: true
+
+services:
+  php_fpm:
+    build:
+      dockerfile: docker/Dockerfile_dev
+      context: .
+    restart: always
+    volumes:
+      - ./symfony:/var/www/symfony
+    container_name: php_fpm
+    ports:
+      - "50030:9000"
+    networks:
+      - 172.10.0.0
+    environment:
+      APP_ENV: 'dev'
+
+  postgres:
+    image: postgres:13.0-alpine
+    container_name: postgres
+    environment:
+      POSTGRES_USER: "dev_user"
+      POSTGRES_PASSWORD: "dev_pass"
+      POSTGRES_DB: "dev_db"
+    ports:
+      - "54323:5432"
+    networks:
+      - 172.10.0.0
