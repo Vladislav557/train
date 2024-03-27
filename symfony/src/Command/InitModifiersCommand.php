@@ -8,9 +8,7 @@ use App\Repository\AgeModifierRepository;
 use App\Repository\PaymentPeriodModifierRepository;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Throwable;
@@ -35,14 +33,23 @@ class InitModifiersCommand extends Command
         $io = new SymfonyStyle($input, $output);
 
         try {
-            $data = json_decode(file_get_contents(__DIR__ . '/../Repository/Fixtures/data.json'), 1);
-            $this->fillDatabase($data);
-            $io->success('Success database filled');
+            if ($this->isDatabaseAlreadyFilled()) {
+                $io->success('Database already have data');
+            } else {
+                $data = json_decode(file_get_contents(__DIR__ . '/../Repository/Fixtures/data.json'), 1);
+                $this->fillDatabase($data);
+                $io->success('Success database filled');
+            }
             return Command::SUCCESS;
         } catch (Throwable $throwable) {
             $io->error($throwable->getMessage());
             return Command::FAILURE;
         }
+    }
+
+    private function isDatabaseAlreadyFilled(): bool
+    {
+        return !empty($this->periodModifierRepository->findAll());
     }
 
     private function fillDatabase(array $collection): void
@@ -67,6 +74,7 @@ class InitModifiersCommand extends Command
                     ->setBookingEnd($modifier['bookingEnd'])
                     ->setBookingStart($modifier['bookingStart'])
                     ->setPaymentDateBorder($modifier['paymentDateBorder']);
+                $this->periodModifierRepository->save($paymentPeriodModifier);
             }
         }
     }

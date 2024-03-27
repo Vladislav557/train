@@ -54,7 +54,7 @@ class PaymentPeriodModifier
         return $this->discountAbsoluteLimit;
     }
 
-    public function setDiscountAbsoluteLimit(int $discountAbsoluteLimit): static
+    public function setDiscountAbsoluteLimit(?int $discountAbsoluteLimit): static
     {
         $this->discountAbsoluteLimit = $discountAbsoluteLimit;
 
@@ -78,7 +78,7 @@ class PaymentPeriodModifier
         return $this->bookingEnd;
     }
 
-    public function setBookingEnd(int $bookingEnd): static
+    public function setBookingEnd(?int $bookingEnd): static
     {
         $this->bookingEnd = $bookingEnd;
 

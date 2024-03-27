@@ -51,7 +51,7 @@ class AgeModifier
         return $this->discountAbsoluteLimit;
     }
 
-    public function setDiscountAbsoluteLimit(int $discountAbsoluteLimit): static
+    public function setDiscountAbsoluteLimit(?int $discountAbsoluteLimit): static
     {
         $this->discountAbsoluteLimit = $discountAbsoluteLimit;
 
