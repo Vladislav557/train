@@ -1,0 +1,111 @@
+[
+  {
+    "type": "age",
+    "topBorder": 6,
+    "bottomBorder": 3,
+    "discountPercent": 80,
+    "absoluteDiscountLimit": null
+  },
+  {
+    "type": "age",
+    "topBorder": 12,
+    "bottomBorder": 6,
+    "discountPercent": 30,
+    "absoluteDiscountLimit": 4500
+  },
+  {
+    "type": "age",
+    "topBorder": 18,
+    "bottomBorder": 12,
+    "discountPercent": 10,
+    "absoluteDiscountLimit": null
+  },
+  {
+    "type": "period",
+    "discountPercent": 7,
+    "absoluteDiscountLimit": 1500,
+    "bookingStart": 1743454800,
+    "bookingEnd": 1759179600,
+    "paymentDateBorder": 1732914000
+  },
+  {
+    "type": "period",
+    "discountPercent": 5,
+    "absoluteDiscountLimit": 1500,
+    "bookingStart": 1743454800,
+    "bookingEnd": 1759179600,
+    "paymentDateBorder": 1735592400
+  },
+  {
+    "type": "period",
+    "discountPercent": 3,
+    "absoluteDiscountLimit": 1500,
+    "bookingStart": 1743454800,
+    "bookingEnd": 1759179600,
+    "paymentDateBorder": 1738270800
+  },
+  {
+    "type": "period",
+    "discountPercent": 7,
+    "absoluteDiscountLimit": 1500,
+    "bookingStart": 1743454800,
+    "bookingEnd": 1759179600,
+    "paymentDateBorder": 1732914000
+  },
+  {
+    "type": "period",
+    "discountPercent": 5,
+    "absoluteDiscountLimit": 1500,
+    "bookingStart": 1743454800,
+    "bookingEnd": 1759179600,
+    "paymentDateBorder": 1735592400
+  },
+  {
+    "type": "period",
+    "discountPercent": 7,
+    "absoluteDiscountLimit": 1500,
+    "bookingStart": 1727730000,
+    "bookingEnd": 1736802000,
+    "paymentDateBorder": 1711832400
+  },
+  {
+    "type": "period",
+    "discountPercent": 5,
+    "absoluteDiscountLimit": 1500,
+    "bookingStart": 1727730000,
+    "bookingEnd": 1736802000,
+    "paymentDateBorder": 1714424400
+  },
+  {
+    "type": "period",
+    "discountPercent": 3,
+    "absoluteDiscountLimit": 1500,
+    "bookingStart": 1727730000,
+    "bookingEnd": 1736802000,
+    "paymentDateBorder": 1717102800
+  },
+  {
+    "type": "period",
+    "discountPercent": 7,
+    "absoluteDiscountLimit": 1500,
+    "bookingStart": 1736888400,
+    "bookingEnd": null,
+    "paymentDateBorder": 1725051600
+  },
+  {
+    "type": "period",
+    "discountPercent": 5,
+    "absoluteDiscountLimit": 1500,
+    "bookingStart": 1736888400,
+    "bookingEnd": null,
+    "paymentDateBorder": 1727643600
+  },
+  {
+    "type": "period",
+    "discountPercent": 3,
+    "absoluteDiscountLimit": 1500,
+    "bookingStart": 1736888400,
+    "bookingEnd": null,
+    "paymentDateBorder": 1730322000
+  }
+]
