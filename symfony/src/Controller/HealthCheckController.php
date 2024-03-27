@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[OA\Tag(name: 'Health Check Controller')]
 class HealthCheckController extends AbstractController
 {
-    #[OA\Get(summary: 'HealthCheck')]
+    #[OA\Get(summary: 'Статус работы сервиса')]
     #[OA\Response(
         response: Response::HTTP_OK,
         description: 'Success',

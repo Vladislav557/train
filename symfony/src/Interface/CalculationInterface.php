@@ -2,7 +2,7 @@
 
 namespace App\Interface;
 
-use App\Model\Request\CalculateRequest;
+use App\Model\Request\Calculation\CalculateRequest;
 
 interface CalculationInterface
 {

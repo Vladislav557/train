@@ -3,7 +3,7 @@
 namespace App\Service;
 
 use App\Interface\CalculationInterface;
-use App\Model\Request\CalculateRequest;
+use App\Model\Request\Calculation\CalculateRequest;
 
 class CalculationService implements CalculationInterface
 {

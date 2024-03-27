@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Model\Request;
+namespace App\Model\Request\Calculation;
 
+use DateTime;
 use Doctrine\DBAL\Types\Types;
 use Symfony\Component\Validator\Constraints as Assert;
-use DateTime;
 
 class CalculateRequest
 {
