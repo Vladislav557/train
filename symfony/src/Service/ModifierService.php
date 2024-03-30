@@ -55,6 +55,9 @@ readonly class ModifierService implements ModifierServiceInterface
         $travelTimestamp = $request->getStartDate()->getTimestamp();
         foreach ($paymentModifiers as $modifier) {
             /**@var PaymentPeriodModifier $modifier */
+            if (is_null($modifier->getBookingEnd())) {
+                $modifier->setBookingEnd((new DateTime('2030-01-01'))->getTimestamp());
+            }
             if ($modifier->getBookingStart() <= $travelTimestamp && $modifier->getBookingEnd() > $travelTimestamp) {
                 if ($modifier->getPaymentDateBorder() >= $paymentTimestamp) {
                     return $modifier;
