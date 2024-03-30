@@ -2,12 +2,13 @@
 
 namespace App\Entity;
 
+use App\Interface\ModifierInterface;
 use App\Repository\AgeModifierRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: AgeModifierRepository::class)]
-class AgeModifier
+class AgeModifier implements ModifierInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -92,5 +93,10 @@ class AgeModifier
         $this->createdAt = $createdAt;
 
         return $this;
+    }
+
+    public function getType(): string
+    {
+        return 'age';
     }
 }

@@ -34,7 +34,7 @@ use Throwable;
         ]
     )
 )]
-#[Route(path: '/travel/api1/calculation')]
+    #[Route(path: '/travel/api1/calculation')]
 #[Tag(name: 'Calculation Controller')]
 class CalculationController extends AbstractController
 {
@@ -80,6 +80,7 @@ class CalculationController extends AbstractController
             $violations = $this->validator->validate($calculationRequest);
             HelperService::checkErrors($violations);
             $data = $this->calculationService->calculate($calculationRequest);
+            $statusCode = Response::HTTP_OK;
         } catch (Throwable $throwable) {
             $this->logger->error('calculation error: ' . $throwable->getMessage());
             $data['error'] = $throwable->getMessage();

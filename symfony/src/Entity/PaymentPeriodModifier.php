@@ -2,12 +2,13 @@
 
 namespace App\Entity;
 
+use App\Interface\ModifierInterface;
 use App\Repository\PaymentPeriodModifierRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PaymentPeriodModifierRepository::class)]
-class PaymentPeriodModifier
+class PaymentPeriodModifier implements ModifierInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -107,5 +108,10 @@ class PaymentPeriodModifier
         $this->createdAt = $createdAt;
 
         return $this;
+    }
+
+    public function getType(): string
+    {
+        return 'payment';
     }
 }

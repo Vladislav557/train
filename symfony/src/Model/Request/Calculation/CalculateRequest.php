@@ -9,18 +9,15 @@ use Symfony\Component\Validator\Constraints as Assert;
 class CalculateRequest
 {
     #[Assert\NotBlank]
-    #[Assert\Type(Types::STRING)]
+    #[Assert\Type(Types::FLOAT)]
     private float $baseCost;
 
     #[Assert\NotBlank]
-    #[Assert\Type(Types::DATE_MUTABLE)]
     private DateTime $birthDate;
 
-    #[Assert\Type(Types::DATE_MUTABLE)]
-    private ?DateTime $startDate;
+    private ?DateTime $startDate = null;
 
-    #[Assert\Type(Types::DATE_MUTABLE)]
-    private ?DateTime $payDay;
+    private ?DateTime $payDay = null;
 
     public function getBaseCost(): float
     {
