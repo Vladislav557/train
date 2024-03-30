@@ -94,9 +94,4 @@ class AgeModifier implements ModifierInterface
 
         return $this;
     }
-
-    public function getType(): string
-    {
-        return 'age';
-    }
 }

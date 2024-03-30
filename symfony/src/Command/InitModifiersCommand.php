@@ -21,7 +21,7 @@ use DateTime;
 class InitModifiersCommand extends Command
 {
     public function __construct(
-        private readonly AgeModifierRepository $ageModifierRepository,
+        private readonly AgeModifierRepository           $ageModifierRepository,
         private readonly PaymentPeriodModifierRepository $periodModifierRepository
     )
     {
