@@ -35,7 +35,7 @@ readonly class ModifierService implements ModifierServiceInterface
 
     public static function getMatchedAgeModifier(array $ageModifiers, CalculateRequest $request): ?AgeModifier
     {
-        $currentDate = new DateTime();
+        $currentDate = $request->getStartDate();
         $age = $currentDate->diff($request->getBirthDate())->y;
         foreach ($ageModifiers as $modifier) {
             /**@var AgeModifier $modifier */

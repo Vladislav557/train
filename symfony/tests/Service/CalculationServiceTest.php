@@ -21,10 +21,10 @@ class CalculationServiceTest extends KernelTestCase
             [
                 'data' => new CalculateRequest(
                     baseCost: 10000.0,
-                    birthDate: new DateTime("2020-01-01"),
+                    birthDate: new DateTime("2019-01-01"),
                     startDate: new DateTime("2025-01-01")
                 ),
-                'expect' => 2000.0
+                'expect' => 7000.0
             ],
             [
                 'data' => new CalculateRequest(
