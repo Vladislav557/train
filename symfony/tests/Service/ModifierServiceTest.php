@@ -93,18 +93,17 @@ class ModifierServiceTest extends KernelTestCase
     {
         $testAgeCase1 = new CalculateRequest(
             baseCost: 10000.0,
-            birthDate: new DateTime("2020-01-01"),
-            startDate: new DateTime("2025-04-01"),
-            payDay: new DateTime("2024-11-01")
+            birthDate: new DateTime("2007-01-01"),
+            startDate: new DateTime("2025-04-01")
         );
         $testAgeCase2 = new CalculateRequest(
             baseCost: 10000.0,
-            birthDate: new DateTime("2000-01-01"),
-            startDate: new DateTime("2025-04-01")
+            birthDate: new DateTime("2007-01-01"),
+            startDate: new DateTime("2024-04-01")
         );
-        $paymentModifiers = $this->periodModifierRepository->findAll();
+        $ageModifiers = $this->ageModifierRepository->findAll();
 
-        $this->assertNotNull(ModifierService::getMatchedPaymentModifier($paymentModifiers, $testAgeCase1), 'Modifier shouldn`t be null');
-        $this->assertNull(ModifierService::getMatchedPaymentModifier($paymentModifiers, $testAgeCase2), 'Modifier should be null');
+        $this->assertNull(ModifierService::getMatchedAgeModifier($ageModifiers, $testAgeCase1), 'Modifier should be null');
+        $this->assertNotNull(ModifierService::getMatchedAgeModifier($ageModifiers, $testAgeCase2), 'Modifier shouldn`t be null');
     }
 }
